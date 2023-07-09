@@ -13,8 +13,12 @@ jobs:
     name: Get PR Labels
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pull-requests: read
     steps:
+      - name: Show event info
+        run: cat "$GITHUB_EVENT_PATH"
+
       - name: Get Pull Request Details
         id: pr-details
         run: |
