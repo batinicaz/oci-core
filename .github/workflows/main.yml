@@ -5,14 +5,12 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # ratchet:actions/checkout@v3
 
@@ -23,3 +21,6 @@ jobs:
 
       - name: Bump version
         uses: qzb/standard-version-action@6f10b03f954471213d1ac206af8410f354801ecb # ratchet:qzb/standard-version-action@v1.0.13
+
+      - name: Push new version
+        run: git push --follow-tags origin main
