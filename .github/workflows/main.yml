@@ -30,11 +30,16 @@ jobs:
         run: |
           # Get the commit SHA from the push event payload
           commit_sha=$(jq -r '.after' "$GITHUB_EVENT_PATH")
+          echo "commit_sha is $commit_sha"
 
           # Get the pull request number for the commit
-          pull_request_number=$(curl -s -X GET \
+          pull_request_info=$(curl -s -X GET \
           -H "Authorization: Bearer $TOKEN" \
-          "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$commit_sha" | jq -r '.pull_request.url' | awk -F'/' '{print $NF}')
+          "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$commit_sha")
+          
+          echo "pull_request_info: $(echo $pull_request_info | jq)
+          
+          pull_request_number=$(jq -r '.pull_request.url' | awk -F'/' '{print $NF})
 
           # Get the labels for the pull request
           response=$(curl -s -X GET \
