@@ -22,5 +22,5 @@ jobs:
       - name: Bump version
         uses: qzb/standard-version-action@6f10b03f954471213d1ac206af8410f354801ecb # ratchet:qzb/standard-version-action@v1.0.13
 
-      - name: Push new version
-        run: git push --follow-tags origin main
+      - name: Push new tag
+        run: git push --follow-tags
