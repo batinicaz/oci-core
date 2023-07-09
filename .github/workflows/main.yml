@@ -28,10 +28,20 @@ jobs:
           "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$commit_sha" | jq -r '.pull_request.url' | awk -F'/' '{print $NF}')
 
           # Get the labels for the pull request
-          labels=$(curl -s -X GET \
+          response=$(curl -s -X GET \
           -H "Authorization: Bearer $GITHUB_TOKEN" \
-          "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$pull_request_number" | jq -r '.labels[].name' 2>/dev/null)
-
+          "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$pull_request_number")
+            
+          # Check if the response contains an error message
+          if [[ $response == *"message"* ]]; then
+            error_message=$(echo "$response" | jq -r '.message')
+            echo "Error retrieving pull request labels: $error_message"
+            exit 1
+          fi
+  
+          # Extract the labels from the response
+          labels=$(echo "$response" | jq -r '.labels[].name' 2>/dev/null)
+          
           # Check if labels is null or empty
           if [ -z "$labels" ]; then
             labels="[]"
