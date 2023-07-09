@@ -86,6 +86,7 @@ jobs:
         run: echo "TAG=$(git tag -l | sort -Vr | head -1)" >> $GITHUB_ENV
 
       - name: Create Pull Request
+        id: create-pr
         uses: peter-evans/create-pull-request@153407881ec5c347639a548ade7d8ad1d6740e38 # ratchet:peter-evans/create-pull-request@v5
         with:
           author: "GitHub Actions Bot <ghabot@users.noreply.github.com>"
@@ -96,6 +97,15 @@ jobs:
           body: "Automated release of ${{ env.TAG }}"
           labels: auto-release
           token: ${{ steps.generate-token.outputs['token'] }}
+
+      - name: Approve Pull Request
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Bearer ${{ steps.generate-token.outputs['token'] }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Content-Type: application/json" \
+            -d '{"event": "APPROVE"}' \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/${{ steps.create-pr.outputs.pull-request-number }}/reviews"
 
       - name: Push new tag
         run: git push --follow-tags
