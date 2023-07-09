@@ -37,7 +37,7 @@ jobs:
           -H "Authorization: Bearer $TOKEN" \
           "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$commit_sha")
           
-          echo "pull_request_info: $(echo $pull_request_info | jq)
+          echo "pull_request_info: $(echo $pull_request_info | jq)"
           
           pull_request_number=$(jq -r '.pull_request.url' | awk -F'/' '{print $NF})
 
