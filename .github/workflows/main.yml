@@ -35,11 +35,11 @@ jobs:
           # Get the pull request number for the commit
           pull_request_info=$(curl -s -X GET \
           -H "Authorization: Bearer $TOKEN" \
-          "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$commit_sha")
+          "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$commit_sha/pulls")
           
           echo "pull_request_info: $(echo $pull_request_info | jq)"
           
-          pull_request_number=$(jq -r '.pull_request.url' | awk -F'/' '{print $NF})
+          pull_request_number=$(echo $pull_request_info | jq -r '.[0].number')
 
           # Get the labels for the pull request
           response=$(curl -s -X GET \
