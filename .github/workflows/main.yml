@@ -1,0 +1,21 @@
+name: Create Release
+on:
+  workflow_dispatch:
+    push:
+      branches:
+        - main
+
+permissions:
+  contents: read
+
+jobs:
+  pre-release:
+    name: Pre Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: "marvinpinto/action-automatic-releases@d68defdd11f9dcc7f52f35c1b7c236ee7513bcc1" # ratchet:marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
