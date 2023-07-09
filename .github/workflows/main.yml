@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   release:
@@ -21,6 +22,21 @@ jobs:
 
       - name: Bump version
         uses: qzb/standard-version-action@6f10b03f954471213d1ac206af8410f354801ecb # ratchet:qzb/standard-version-action@v1.0.13
+
+      - name: Save latest tag to environment
+        run: echo "TAG=$(git tag -l | sort -Vr | head -1)" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@153407881ec5c347639a548ade7d8ad1d6740e38 # ratchet:peter-evans/create-pull-request@v5
+        with:
+          author: "GitHub Actions Bot"
+          add-paths: "CHANGELOG.md"
+          branch: "release/${{ env.TAG }}"
+          delete-branch: true
+          title: "chore(release): ${{ env.TAG }}"
+          body: "Automated release of ${{ env.TAG }}"
+          labels: auto-release
+          token: ${{ github.token }}
 
       - name: Push new tag
         run: git push --follow-tags
