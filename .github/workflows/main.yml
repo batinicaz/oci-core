@@ -18,7 +18,7 @@ jobs:
         with:
           app_id: ${{ secrets.APP_ID }}
           installation_id: ${{ secrets.APP_INSTALL_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+          token: ${{ steps.generate_token.outputs.token }}
 
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # ratchet:actions/checkout@v3
         with:
