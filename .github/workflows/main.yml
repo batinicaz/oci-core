@@ -36,33 +36,25 @@ jobs:
           pull_request_info=$(curl -s -X GET \
           -H "Authorization: Bearer $TOKEN" \
           "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$commit_sha/pulls")
-          
-          echo "pull_request_info: $(echo $pull_request_info | jq)"
-          
+
           pull_request_number=$(echo $pull_request_info | jq -r '.[0].number')
 
           # Get the labels for the pull request
           response=$(curl -s -X GET \
           -H "Authorization: Bearer $TOKEN" \
           "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$pull_request_number")
-            
-          # Check if the response contains an error message
-          if [[ $response == *"message"* ]]; then
-            error_message=$(echo "$response" | jq -r '.message')
-            echo "Error retrieving pull request labels for $pull_request_number: $error_message"
-            exit 1
-          fi
   
           # Extract the labels from the response
           labels=$(echo "$response" | jq -r '.labels[].name' 2>/dev/null)
-          
+
           # Check if labels is null or empty
           if [ -z "$labels" ]; then
             labels="[]"
           fi
 
           # Output the labels
-          echo "::set-output name=labels::$labels"
+          echo "Labels are: $labels"
+          echo "PR_LABELS=$labels" >> $GITHUB_ENV
 
   release:
     name: Release
