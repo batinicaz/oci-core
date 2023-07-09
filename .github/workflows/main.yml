@@ -44,7 +44,7 @@ jobs:
           # Check if the response contains an error message
           if [[ $response == *"message"* ]]; then
             error_message=$(echo "$response" | jq -r '.message')
-            echo "Error retrieving pull request labels: $error_message"
+            echo "Error retrieving pull request labels for $pull_request_number: $error_message"
             exit 1
           fi
   
