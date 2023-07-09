@@ -16,20 +16,29 @@ jobs:
       contents: read
       pull-requests: read
     steps:
+      - uses: tibdex/github-app-token@b62528385c34dbc9f38e5f4225ac829252d1ea92 # ratchet:tibdex/github-app-token@v1.8.0
+        id: generate-token
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          installation_id: ${{ secrets.APP_INSTALL_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: Get Pull Request Labels
         id: pr-labels
+        env:
+          TOKEN: ${{ steps.generate-token.outputs['token'] }}
         run: |
           # Get the commit SHA from the push event payload
           commit_sha=$(jq -r '.after' "$GITHUB_EVENT_PATH")
 
           # Get the pull request number for the commit
           pull_request_number=$(curl -s -X GET \
-          -H "Authorization: Bearer $GITHUB_TOKEN" \
+          -H "Authorization: Bearer TOKEN" \
           "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$commit_sha" | jq -r '.pull_request.url' | awk -F'/' '{print $NF}')
 
           # Get the labels for the pull request
           response=$(curl -s -X GET \
-          -H "Authorization: Bearer $GITHUB_TOKEN" \
+          -H "Authorization: Bearer TOKEN" \
           "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$pull_request_number")
             
           # Check if the response contains an error message
