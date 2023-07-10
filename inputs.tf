@@ -56,3 +56,10 @@ variable "oci_user_id" {
   description = "The ID of user that terraform will use to create the resources"
   type        = string
 }
+
+locals {
+  default_tags = {
+    "${oci_identity_tag_namespace.core.name}.managed" = "terraform"
+    "${oci_identity_tag_namespace.core.name}.repo"    = "https://github.com/batinicaz/oci-core"
+  }
+}
