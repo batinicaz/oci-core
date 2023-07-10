@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/batinicaz/oci-core/compare/v1.1.0...v1.2.0) (2023-07-10)
+
+
+### Features
+
+* deploy core network vpc ([5d25b00](https://github.com/batinicaz/oci-core/commit/5d25b00f6c80ea94ede2dcbd0573ff00f34f535c))
+
+
+### Bug Fixes
+
+* do not remove labels when auto merging pr to prevent release loop ([23c856e](https://github.com/batinicaz/oci-core/commit/23c856e6b995f2849e91bb209a3b30f152d8d1a2))
+* set root compartment id for creating new compartment ([56df2ed](https://github.com/batinicaz/oci-core/commit/56df2ed16130f5a817949f32094a6c8345fe9178))
+
 ## 1.1.0 (2023-07-09)
 
 
