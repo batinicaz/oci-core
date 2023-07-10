@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/batinicaz/oci-core/compare/v1.2.2...v1.2.3) (2023-07-10)
+
+
+### Bug Fixes
+
+* update default tags to enforce default_value as required by api ([a83d552](https://github.com/batinicaz/oci-core/commit/a83d5528f4fd632ab43b7e52fbf981cbee89187b))
+
 ### [1.2.2](https://github.com/batinicaz/oci-core/compare/v1.2.1...v1.2.2) (2023-07-10)
 
 
