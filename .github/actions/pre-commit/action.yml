@@ -1,6 +1,0 @@
-name: Pre-Commit
-description: Enforces pre-commit by running inside a container with the required tools
-author: batinicaz
-runs:
-  using: docker
-  image: Dockerfile
