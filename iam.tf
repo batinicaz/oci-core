@@ -1,6 +1,6 @@
 locals {
   // Transform set into map so it's suitable for for_each
-  default_tags = {
+  default_tag_definitions = {
     for tag_definition in var.default_tags :
     tag_definition.name => tag_definition
   }
@@ -19,7 +19,7 @@ resource "oci_identity_tag_namespace" "core" {
 }
 
 resource "oci_identity_tag_default" "defaults" {
-  for_each = local.default_tags
+  for_each = local.default_tag_definitions
 
   compartment_id    = oci_identity_compartment.terraform.id
   is_required       = each.value.is_required
@@ -28,7 +28,7 @@ resource "oci_identity_tag_default" "defaults" {
 }
 
 resource "oci_identity_tag" "defaults" {
-  for_each = local.default_tags
+  for_each = local.default_tag_definitions
 
   description      = each.value.description
   name             = each.key
