@@ -49,7 +49,7 @@ variable "private_subnets" {
   description = "Details of private subnets (no internet access as always free doesn't include NGW) to create. Subnet Name --> CIDR"
   type        = map(string)
   default = {
-    public = "172.16.0.16/28"
+    private = "172.16.0.16/28"
   }
   validation {
     condition = alltrue([
