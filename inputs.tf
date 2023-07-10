@@ -1,6 +1,6 @@
 variable "identity_compartment_name" {
   description = "The name of the top level identity compartment"
-  default     = "core"
+  default     = "terraform"
   type        = string
 }
 

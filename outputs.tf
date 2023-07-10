@@ -9,3 +9,7 @@ output "core_vcn_id" {
 output "core_vcn_subnets" {
   value = merge(module.core_vcn.public_subnets, module.core_vcn.public_subnets)
 }
+
+output "terraform_identity_compartment_id" {
+  value = oci_identity_compartment.terraform.id
+}

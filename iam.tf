@@ -6,13 +6,14 @@ locals {
   }
 }
 
-resource "oci_identity_compartment" "core" {
-  name        = var.identity_compartment_name
-  description = "Default identity compartment"
+resource "oci_identity_compartment" "terraform" {
+  compartment_id = var.oci_tenancy_id
+  name           = var.identity_compartment_name
+  description    = "Default identity compartment for Terraformed services"
 }
 
 resource "oci_identity_tag_namespace" "core" {
-  compartment_id = oci_identity_compartment.core.id
+  compartment_id = oci_identity_compartment.terraform.id
   description    = "Default tag namespace for the ${var.identity_compartment_name} compartment"
   name           = var.identity_compartment_name
 }
@@ -20,7 +21,7 @@ resource "oci_identity_tag_namespace" "core" {
 resource "oci_identity_tag_default" "defaults" {
   for_each = local.default_tags
 
-  compartment_id    = oci_identity_compartment.core.id
+  compartment_id    = oci_identity_compartment.terraform.id
   is_required       = each.value.is_required
   tag_definition_id = oci_identity_tag.defaults[each.key].id
   value             = each.value.default_value
