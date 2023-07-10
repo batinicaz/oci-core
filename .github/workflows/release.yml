@@ -1,4 +1,5 @@
 name: Deploy Tags
+run-name: "Deploy ${{ github.ref }}"
 on:
   push:
     tags:
