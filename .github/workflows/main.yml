@@ -60,7 +60,7 @@ jobs:
     name: Release
     needs: get-labels
     runs-on: ubuntu-latest
-    if: "!contains(needs.get-labels.outputs.PR_LABELS, 'auto-release')"
+    if: needs.get-labels.outputs.PR_LABELS != 'auto-release'
     steps:
       - uses: tibdex/github-app-token@b62528385c34dbc9f38e5f4225ac829252d1ea92 # ratchet:tibdex/github-app-token@v1.8.0
         id: generate-token
