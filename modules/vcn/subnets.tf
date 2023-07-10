@@ -2,7 +2,6 @@ resource "oci_core_subnet" "private" {
   for_each = var.private_subnets
 
   display_name              = each.key
-  dns_label                 = each.key
   cidr_block                = each.value
   compartment_id            = var.compartment_id
   prohibit_internet_ingress = true
@@ -28,7 +27,6 @@ resource "oci_core_subnet" "public" {
   for_each = var.public_subnets
 
   display_name              = each.key
-  dns_label                 = each.key
   cidr_block                = each.value
   compartment_id            = var.compartment_id
   prohibit_internet_ingress = false
