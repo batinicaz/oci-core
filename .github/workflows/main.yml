@@ -54,7 +54,7 @@ jobs:
 
           # Output the labels
           echo "Labels are: $labels"
-          echo "PR_LABELS=$labels" >> $GITHUB_ENV
+          echo "PR_LABELS=$labels" >> GITHUB_OUTPUT
 
   release:
     name: Release
