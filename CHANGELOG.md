@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/batinicaz/oci-core/compare/v1.2.1...v1.2.2) (2023-07-10)
+
+
+### Bug Fixes
+
+* add missing $ to GITHUB_OUTPUT ([8b483d2](https://github.com/batinicaz/oci-core/commit/8b483d2410bc01f2b314706c7238eea6d7e304f0))
+* ensure pr label is added to output instead of env ([60eb041](https://github.com/batinicaz/oci-core/commit/60eb04173de34c230a91a6e83c7f44d3f60bea05))
+
 ### [1.2.1](https://github.com/batinicaz/oci-core/compare/v1.2.0...v1.2.1) (2023-07-10)
 
 
