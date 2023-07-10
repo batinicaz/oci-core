@@ -5,6 +5,6 @@ resource "oci_core_internet_gateway" "igw" {
   vcn_id         = oci_core_vcn.vcn.id
 
   defined_tags = merge(var.tags, {
-    name = "${var.name}-igw"
+    "${var.tag_namespace}.name" = "${var.name}-igw"
   })
 }

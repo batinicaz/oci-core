@@ -36,6 +36,7 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | The display name for the VCN | `string` | `"Core Network"` | no |
 | <a name="input_private_subnets"></a> [private\_subnets](#input\_private\_subnets) | Details of private subnets (no internet access as always free doesn't include NGW) to create. Subnet Name --> CIDR | `map(string)` | <pre>{<br>  "public": "172.16.0.16/28"<br>}</pre> | no |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | Details of the public subnets (route direct to IGW) to create. Subnet Name --> CIDR | `map(string)` | <pre>{<br>  "public": "172.16.0.0/28"<br>}</pre> | no |
+| <a name="input_tag_namespace"></a> [tag\_namespace](#input\_tag\_namespace) | The namespace where tags live | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Map of key/value tags to add to all resources | `map(string)` | `{}` | no |
 
 ## Outputs

@@ -65,3 +65,8 @@ variable "tags" {
   default     = {}
   type        = map(string)
 }
+
+variable "tag_namespace" {
+  description = "The namespace where tags live"
+  type        = string
+}
