@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.4](https://github.com/batinicaz/oci-core/compare/v1.2.3...v1.2.4) (2023-07-10)
+
+
+### Bug Fixes
+
+* add output for PR_LABELS to make it available to release job ([f90983a](https://github.com/batinicaz/oci-core/commit/f90983a0a2a3e254287d346b5735e55692ad064a))
+* correctly namespace tags ([936475b](https://github.com/batinicaz/oci-core/commit/936475bf679999254ca599ca7d5b1faa187d9baa))
+
 ### [1.2.3](https://github.com/batinicaz/oci-core/compare/v1.2.2...v1.2.3) (2023-07-10)
 
 
