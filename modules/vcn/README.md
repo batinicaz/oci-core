@@ -40,5 +40,9 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_id"></a> [id](#output\_id) | ID of the VCN created |
+| <a name="output_private_subnets"></a> [private\_subnets](#output\_private\_subnets) | Map of private subnet names to IDs |
+| <a name="output_public_subnets"></a> [public\_subnets](#output\_public\_subnets) | Map of public subnet names to IDs |
 <!-- END_TF_DOCS -->
