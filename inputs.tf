@@ -9,17 +9,19 @@ variable "default_tags" {
   type = set(object({
     name          = string
     description   = string
-    default_value = optional(string, "")
+    default_value = string
     is_required   = optional(bool, true)
   }))
   default = [
     {
-      name        = "name"
-      description = "The name of the resource"
+      name          = "name"
+      description   = "The name of the resource"
+      default_value = "UNTAGGED"
     },
     {
-      name        = "repo"
-      description = "The URL of the repository containing the code that deployed the resource"
+      name          = "repo"
+      description   = "The URL of the repository containing the code that deployed the resource"
+      default_value = "NOT_SET"
     },
     {
       name          = "managed"

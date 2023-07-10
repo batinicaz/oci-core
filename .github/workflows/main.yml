@@ -62,6 +62,9 @@ jobs:
     runs-on: ubuntu-latest
     if: needs.get-labels.outputs.PR_LABELS != 'auto-release'
     steps:
+      - name: DEBUG
+        run: |
+          echo "PR_LABELS: ${{ needs.get-labels.outputs.PR_LABELS }}"
       - uses: tibdex/github-app-token@b62528385c34dbc9f38e5f4225ac829252d1ea92 # ratchet:tibdex/github-app-token@v1.8.0
         id: generate-token
         with:
