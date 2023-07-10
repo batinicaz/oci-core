@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/batinicaz/oci-core/compare/v1.2.0...v1.2.1) (2023-07-10)
+
+
+### Bug Fixes
+
+* set root compartment id to enable creating compartment + rename to better describe ([07c6f09](https://github.com/batinicaz/oci-core/commit/07c6f0980468f1f43ffb42f154ea0de8686eeafa))
+* update auto release conditional to do a string comparison so release does not loop ([38c3311](https://github.com/batinicaz/oci-core/commit/38c331114c66faa7bf4ab0e57b0aeb42cdf7ba9c))
+
 ## [1.2.0](https://github.com/batinicaz/oci-core/compare/v1.1.0...v1.2.0) (2023-07-10)
 
 
