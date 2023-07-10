@@ -25,6 +25,5 @@ jobs:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs['token'] }}
           MERGE_DELETE_BRANCH: true
           MERGE_LABELS: auto-release
-          MERGE_REMOVE_LABELS: auto-release
           MERGE_RETRIES: 10
           MERGE_RETRY_SLEEP: 30000 # 30 seconds

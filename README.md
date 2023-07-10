@@ -14,7 +14,9 @@
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_core_vcn"></a> [core\_vcn](#module\_core\_vcn) | ./modules/vcn | n/a |
 
 ## Resources
 
@@ -41,5 +43,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_core_vcn_id"></a> [core\_vcn\_id](#output\_core\_vcn\_id) | n/a |
+| <a name="output_core_vcn_subnets"></a> [core\_vcn\_subnets](#output\_core\_vcn\_subnets) | n/a |
 | <a name="output_default_tags"></a> [default\_tags](#output\_default\_tags) | n/a |
 <!-- END_TF_DOCS -->
