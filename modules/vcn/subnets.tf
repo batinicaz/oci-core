@@ -10,7 +10,7 @@ resource "oci_core_subnet" "private" {
   vcn_id                    = oci_core_vcn.vcn.id
 
   defined_tags = merge(var.tags, {
-    name = each.key
+    "${var.tag_namespace}.name" = each.key
   })
 }
 
@@ -20,7 +20,7 @@ resource "oci_core_route_table" "private" {
   vcn_id         = oci_core_vcn.vcn.id
 
   defined_tags = merge(var.tags, {
-    name = "${var.name}-private"
+    "${var.tag_namespace}.name" = "${var.name}-private"
   })
 }
 
@@ -36,7 +36,7 @@ resource "oci_core_subnet" "public" {
   vcn_id                    = oci_core_vcn.vcn.id
 
   defined_tags = merge(var.tags, {
-    name = each.key
+    "${var.tag_namespace}.name" = each.key
   })
 }
 
@@ -46,7 +46,7 @@ resource "oci_core_route_table" "public" {
   vcn_id         = oci_core_vcn.vcn.id
 
   defined_tags = merge(var.tags, {
-    name = "${var.name}-public"
+    "${var.tag_namespace}.name" = "${var.name}-public"
   })
 
   route_rules {

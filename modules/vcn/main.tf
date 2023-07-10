@@ -6,6 +6,6 @@ resource "oci_core_vcn" "vcn" {
   is_ipv6enabled = false
 
   defined_tags = merge(var.tags, {
-    name = var.name
+    "${var.tag_namespace}.name" = var.name
   })
 }
