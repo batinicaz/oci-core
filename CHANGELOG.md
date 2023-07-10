@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.6](https://github.com/batinicaz/oci-core/compare/v1.2.5...v1.2.6) (2023-07-10)
+
+
+### Bug Fixes
+
+* remove conflict dns attribute on subnets + correct private subnet name ([a64c19a](https://github.com/batinicaz/oci-core/commit/a64c19a811f917ffb9ec6aa3dfdb7083251f9e61))
+
 ### [1.2.5](https://github.com/batinicaz/oci-core/compare/v1.2.4...v1.2.5) (2023-07-10)
 
 
