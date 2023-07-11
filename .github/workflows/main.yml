@@ -6,111 +6,11 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
-  get-labels:
-    name: Get PR Labels
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: read
-    outputs:
-      PR_LABELS: ${{ steps.pr-labels.outputs.PR_LABELS }}
-    steps:
-      - uses: tibdex/github-app-token@b62528385c34dbc9f38e5f4225ac829252d1ea92 # ratchet:tibdex/github-app-token@v1.8.0
-        id: generate-token
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          installation_id: ${{ secrets.APP_INSTALL_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
-
-      - name: Get Pull Request Labels
-        id: pr-labels
-        env:
-          TOKEN: ${{ steps.generate-token.outputs['token'] }}
-        run: |
-          # Get the commit SHA from the push event payload
-          commit_sha=$(jq -r '.after' "$GITHUB_EVENT_PATH")
-          echo "commit_sha is $commit_sha"
-
-          # Get the pull request number for the commit
-          pull_request_info=$(curl -s -X GET \
-          -H "Authorization: Bearer $TOKEN" \
-          "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$commit_sha/pulls")
-
-          pull_request_number=$(echo $pull_request_info | jq -r '.[0].number')
-
-          # Get the labels for the pull request
-          response=$(curl -s -X GET \
-          -H "Authorization: Bearer $TOKEN" \
-          "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$pull_request_number")
-  
-          # Extract the labels from the response
-          labels=$(echo "$response" | jq -r '.labels[].name' 2>/dev/null)
-
-          # Check if labels is null or empty
-          if [ -z "$labels" ]; then
-            labels="[]"
-          fi
-
-          # Output the labels
-          echo "Labels are: $labels"
-          echo "PR_LABELS=$labels" >> $GITHUB_OUTPUT
-
   release:
-    name: Release
-    needs: get-labels
-    runs-on: ubuntu-latest
-    if: needs.get-labels.outputs.PR_LABELS != 'auto-release'
-    steps:
-      - name: DEBUG
-        run: |
-          echo "PR_LABELS: ${{ needs.get-labels.outputs.PR_LABELS }}"
-      - uses: tibdex/github-app-token@b62528385c34dbc9f38e5f4225ac829252d1ea92 # ratchet:tibdex/github-app-token@v1.8.0
-        id: generate-token
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          installation_id: ${{ secrets.APP_INSTALL_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
-
-      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # ratchet:actions/checkout@v3
-        with:
-          fetch-depth: 0
-          token: ${{ steps.generate-token.outputs['token'] }}
-
-      - name: Configure committer
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<ghabot@users.noreply.github.com>"
-
-      - name: Bump version
-        uses: qzb/standard-version-action@6f10b03f954471213d1ac206af8410f354801ecb # ratchet:qzb/standard-version-action@v1.0.13
-
-      - name: Save latest tag to environment
-        run: echo "TAG=$(git tag -l | sort -Vr | head -1)" >> $GITHUB_ENV
-
-      - name: Create Pull Request
-        id: create-pr
-        uses: peter-evans/create-pull-request@153407881ec5c347639a548ade7d8ad1d6740e38 # ratchet:peter-evans/create-pull-request@v5
-        with:
-          author: "GitHub Actions Bot <ghabot@users.noreply.github.com>"
-          add-paths: "CHANGELOG.md"
-          branch: "release/${{ env.TAG }}"
-          delete-branch: true
-          title: "chore(release): ${{ env.TAG }}"
-          body: "Automated release of ${{ env.TAG }}"
-          labels: auto-release
-          token: ${{ steps.generate-token.outputs['token'] }}
-
-      - name: Approve Pull Request
-        run: |
-          curl -s -X POST \
-            -H "Authorization: Bearer ${{ github.token }}" \
-            -H "Accept: application/vnd.github.v3+json" \
-            -H "Content-Type: application/json" \
-            -d '{"event": "APPROVE"}' \
-            "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/${{ steps.create-pr.outputs.pull-request-number }}/reviews"
-
-      - name: Push new tag
-        run: git push --follow-tags
+    uses: batinicaz/gha/.github/workflows/release.yml@4adcb748995f19aa9991c41ecdcdd3350dae9707 # ratchet:batinicaz/gha/.github/workflows/release.yml@latest
+    secrets:
+      APP_ID: ${{ secrets.APP_ID }}
+      APP_INSTALL_ID: ${{ secrets.APP_INSTALL_ID }}
+      APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
