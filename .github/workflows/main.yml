@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   release:
-    uses: batinicaz/gha/.github/workflows/release.yml@4adcb748995f19aa9991c41ecdcdd3350dae9707 # ratchet:batinicaz/gha/.github/workflows/release.yml@latest
+    uses: batinicaz/gha/.github/workflows/release.yml@f95e2fd11d902f8e6b6eac6ff85ced89eb6d6fc2 # ratchet:batinicaz/gha/.github/workflows/release.yml@latest
     secrets:
       APP_ID: ${{ secrets.APP_ID }}
       APP_INSTALL_ID: ${{ secrets.APP_INSTALL_ID }}
