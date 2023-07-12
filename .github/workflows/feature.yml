@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # ratchet:actions/checkout@v3
 
       - name: Run pre-commit
-        uses: docker://ghcr.io/batinicaz/pre-commit:latest
+        uses: batinicaz/gha/.github/actions/pre-commit@f95e2fd11d902f8e6b6eac6ff85ced89eb6d6fc2 # ratchet:batinicaz/gha/.github/actions/pre-commit@latest
 
   terraform:
     runs-on: ubuntu-latest
