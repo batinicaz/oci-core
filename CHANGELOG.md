@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/batinicaz/oci-core/compare/v1.3.0...v1.3.1) (2023-08-03)
+
+
+### Bug Fixes
+
+* display name of budget + budget alerts ([f2943c4](https://github.com/batinicaz/oci-core/commit/f2943c45f46ab001af576379c6dfa5ec4142f91b))
+
 ## [1.3.0](https://github.com/batinicaz/oci-core/compare/v1.2.10...v1.3.0) (2023-08-03)
 
 
