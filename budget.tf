@@ -1,13 +1,16 @@
 resource "oci_budget_budget" "default" {
   amount         = var.budget
   compartment_id = var.oci_tenancy_id
-  display_name   = "Org Wide Budget"
+  defined_tags   = local.default_tags
+  display_name   = "org-wide-budget"
   reset_period   = "MONTHLY"
+  targets        = [var.oci_tenancy_id]
 }
 
 resource "oci_budget_alert_rule" "critical" {
   budget_id      = oci_budget_budget.default.id
-  display_name   = "${var.budget_alert_threshold}% of Budget Spent"
+  display_name   = "${var.budget_alert_threshold}-percent-of-budget-spent"
+  defined_tags   = local.default_tags
   description    = "Alert when ${var.budget_alert_threshold}% of the budget is spent"
   message        = "CRITICAL: You have spent ${var.budget_alert_threshold}% of your £${var.budget} budget"
   recipients     = var.budget_alert_email
@@ -18,7 +21,8 @@ resource "oci_budget_alert_rule" "critical" {
 
 resource "oci_budget_alert_rule" "warning" {
   budget_id      = oci_budget_budget.default.id
-  display_name   = "Projected to spend ${var.budget_alert_threshold}% of Budget"
+  display_name   = "projected-to-spend-${var.budget_alert_threshold}-percent-of-budget"
+  defined_tags   = local.default_tags
   description    = "Alert when projected to spend ${var.budget_alert_threshold}% of budget"
   message        = "WARN: You are projected to spend ${var.budget_alert_threshold}% of your £${var.budget} budget"
   recipients     = var.budget_alert_email
