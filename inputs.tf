@@ -1,3 +1,20 @@
+variable "budget" {
+  description = "Desired max monthly spend (not a limit, just a warning/monitoring mechanism)"
+  type        = number
+  default     = 5
+}
+
+variable "budget_alert_email" {
+  description = "The email address where budget notifications are sent"
+  type        = string
+}
+
+variable "budget_alert_threshold" {
+  description = "The percentage of the budget being spent or projected to spend that will trigger alerts"
+  type        = number
+  default     = 90
+}
+
 variable "identity_compartment_name" {
   description = "The name of the top level identity compartment"
   default     = "terraform"

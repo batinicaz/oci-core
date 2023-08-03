@@ -1,3 +1,10 @@
+# OCI Core
+
+Core configuration to set up an oracle cloud free tier account.
+
+Built to only use free tier but with a fully activated account to enable use of additional free services
+like image scanning and custom images.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -22,6 +29,9 @@
 
 | Name | Type |
 |------|------|
+| [oci_budget_alert_rule.critical](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/budget_alert_rule) | resource |
+| [oci_budget_alert_rule.warning](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/budget_alert_rule) | resource |
+| [oci_budget_budget.default](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/budget_budget) | resource |
 | [oci_identity_compartment.terraform](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_compartment) | resource |
 | [oci_identity_tag.defaults](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_tag) | resource |
 | [oci_identity_tag_default.defaults](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_tag_default) | resource |
@@ -31,6 +41,9 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_budget"></a> [budget](#input\_budget) | Desired max monthly spend (not a limit, just a warning/monitoring mechanism) | `number` | `5` | no |
+| <a name="input_budget_alert_email"></a> [budget\_alert\_email](#input\_budget\_alert\_email) | The email address where budget notifications are sent | `string` | n/a | yes |
+| <a name="input_budget_alert_threshold"></a> [budget\_alert\_threshold](#input\_budget\_alert\_threshold) | The percentage of the budget being spent or projected to spend that will trigger alerts | `number` | `90` | no |
 | <a name="input_default_tags"></a> [default\_tags](#input\_default\_tags) | Map of the default tags to configure for the identity compartment | <pre>set(object({<br>    name          = string<br>    description   = string<br>    default_value = string<br>    is_required   = optional(bool, true)<br>  }))</pre> | <pre>[<br>  {<br>    "default_value": "UNTAGGED",<br>    "description": "The name of the resource",<br>    "name": "name"<br>  },<br>  {<br>    "default_value": "NOT_SET",<br>    "description": "The URL of the repository containing the code that deployed the resource",<br>    "name": "repo"<br>  },<br>  {<br>    "default_value": "terraform",<br>    "description": "The owner/tool that manages the resource e.g. manual or terraform",<br>    "name": "managed"<br>  }<br>]</pre> | no |
 | <a name="input_identity_compartment_name"></a> [identity\_compartment\_name](#input\_identity\_compartment\_name) | The name of the top level identity compartment | `string` | `"terraform"` | no |
 | <a name="input_oci_fingerprint"></a> [oci\_fingerprint](#input\_oci\_fingerprint) | The fingerprint of the key used to authenticate with OCI | `string` | n/a | yes |
