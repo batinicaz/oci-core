@@ -1,6 +1,6 @@
 resource "oci_core_internet_gateway" "igw" {
   compartment_id = var.compartment_id
-  display_name   = "${var.name}-igw"
+  display_name   = "${var.name} IGW"
   enabled        = true
   vcn_id         = oci_core_vcn.vcn.id
 
@@ -19,7 +19,7 @@ resource "oci_core_internet_gateway" "igw" {
 resource "oci_core_nat_gateway" "ngw" {
   block_traffic  = false
   compartment_id = var.compartment_id
-  display_name   = "${var.name}-ngw"
+  display_name   = "${var.name} NGW"
   vcn_id         = oci_core_vcn.vcn.id
 
   defined_tags = merge(var.tags, {
