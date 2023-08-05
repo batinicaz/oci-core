@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.2](https://github.com/batinicaz/oci-core/compare/v1.5.1...v1.5.2) (2023-08-05)
+
+
+### Bug Fixes
+
+* create security lists for public + private and attach to subnets ([df81dba](https://github.com/batinicaz/oci-core/commit/df81dba6e07e92cddb2765e6a8a9735ff3c87742))
+
 ### [1.5.1](https://github.com/batinicaz/oci-core/compare/v1.5.0...v1.5.1) (2023-08-05)
 
 
