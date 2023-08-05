@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/batinicaz/oci-core/compare/v1.3.2...v1.4.0) (2023-08-05)
+
+
+### Features
+
+* add kms vault ([618fd0f](https://github.com/batinicaz/oci-core/commit/618fd0f84b1541f91fd1dcbaef40c6566c0957bc))
+* add NAT GW to private subnets ([5fabaa5](https://github.com/batinicaz/oci-core/commit/5fabaa5217b11d60a3b7c05d667b1c7d629c31d8))
+
+
+### Bug Fixes
+
+* ignore changes caused by auto generated Oracle tags ([56899e8](https://github.com/batinicaz/oci-core/commit/56899e8b5fa602e83a090534a49b36fccd54a73c))
+
 ### [1.3.2](https://github.com/batinicaz/oci-core/compare/v1.3.1...v1.3.2) (2023-08-04)
 
 
