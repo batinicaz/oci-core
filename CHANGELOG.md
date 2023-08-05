@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/batinicaz/oci-core/compare/v1.5.0...v1.5.1) (2023-08-05)
+
+
+### Bug Fixes
+
+* add required tags to security list ([b372b86](https://github.com/batinicaz/oci-core/commit/b372b8675e2edb96ca54d6fbf31706b152c9f4b1))
+
 ## [1.5.0](https://github.com/batinicaz/oci-core/compare/v1.4.0...v1.5.0) (2023-08-05)
 
 
