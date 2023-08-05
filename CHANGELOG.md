@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/batinicaz/oci-core/compare/v1.4.0...v1.5.0) (2023-08-05)
+
+
+### Features
+
+* allow internal traffic from public to private subnets ([22cec0f](https://github.com/batinicaz/oci-core/commit/22cec0f1d2b585b8d6f009bb360d1c75efb55f4e))
+
 ## [1.4.0](https://github.com/batinicaz/oci-core/compare/v1.3.2...v1.4.0) (2023-08-05)
 
 
