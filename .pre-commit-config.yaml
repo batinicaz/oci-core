@@ -18,3 +18,5 @@ repos:
     rev: 2.3.314
     hooks:
       - id: checkov
+        args:
+          -  --skip-check=CKV_OCI_17 # Intentionally using stateful rules
