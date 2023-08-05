@@ -3,6 +3,10 @@ resource "oci_core_security_list" "allow_lb_to_instance" {
   display_name   = "internal-public-to-private"
   vcn_id         = oci_core_vcn.vcn.id
 
+  defined_tags = merge(var.tags, {
+    "${var.tag_namespace}.name" = "internal-public-to-private"
+  })
+
   dynamic "egress_security_rules" {
     for_each = var.private_subnets
     content {
