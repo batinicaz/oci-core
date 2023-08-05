@@ -3,7 +3,7 @@
 Core configuration to set up an oracle cloud free tier account.
 
 Built to only use free tier but with a fully activated account to enable use of additional free services
-like image scanning and custom images.
+like NGW, image scanning and custom images.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

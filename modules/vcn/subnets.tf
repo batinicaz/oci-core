@@ -21,6 +21,13 @@ resource "oci_core_route_table" "private" {
   defined_tags = merge(var.tags, {
     "${var.tag_namespace}.name" = "${var.name}-private"
   })
+
+  route_rules {
+    destination       = "0.0.0.0/0"
+    destination_type  = "CIDR_BLOCK"
+    description       = "Default route to NGW"
+    network_entity_id = oci_core_nat_gateway.ngw.id
+  }
 }
 
 resource "oci_core_subnet" "public" {
