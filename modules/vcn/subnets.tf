@@ -6,6 +6,7 @@ resource "oci_core_subnet" "private" {
   compartment_id            = var.compartment_id
   prohibit_internet_ingress = true
   route_table_id            = oci_core_route_table.private.id
+  security_list_ids         = [oci_core_security_list.private.id]
   vcn_id                    = oci_core_vcn.vcn.id
 
   defined_tags = merge(var.tags, {
@@ -38,6 +39,7 @@ resource "oci_core_subnet" "public" {
   compartment_id            = var.compartment_id
   prohibit_internet_ingress = false
   route_table_id            = oci_core_route_table.public.id
+  security_list_ids         = [oci_core_security_list.public.id]
   vcn_id                    = oci_core_vcn.vcn.id
 
   defined_tags = merge(var.tags, {
