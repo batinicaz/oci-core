@@ -3,7 +3,7 @@
 Core configuration to set up an oracle cloud free tier account.
 
 Built to only use free tier but with a fully activated account to enable use of additional free services
-like image scanning and custom images.
+like NGW, image scanning and custom images.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -36,6 +36,7 @@ like image scanning and custom images.
 | [oci_identity_tag.defaults](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_tag) | resource |
 | [oci_identity_tag_default.defaults](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_tag_default) | resource |
 | [oci_identity_tag_namespace.core](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_tag_namespace) | resource |
+| [oci_kms_vault.terraform](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/kms_vault) | resource |
 
 ## Inputs
 
@@ -59,5 +60,6 @@ like image scanning and custom images.
 | <a name="output_core_vcn_id"></a> [core\_vcn\_id](#output\_core\_vcn\_id) | n/a |
 | <a name="output_core_vcn_subnets"></a> [core\_vcn\_subnets](#output\_core\_vcn\_subnets) | n/a |
 | <a name="output_default_tags"></a> [default\_tags](#output\_default\_tags) | n/a |
+| <a name="output_kms_vault_endpoint"></a> [kms\_vault\_endpoint](#output\_kms\_vault\_endpoint) | n/a |
 | <a name="output_terraform_identity_compartment_id"></a> [terraform\_identity\_compartment\_id](#output\_terraform\_identity\_compartment\_id) | n/a |
 <!-- END_TF_DOCS -->

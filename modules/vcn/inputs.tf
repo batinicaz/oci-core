@@ -46,7 +46,7 @@ variable "public_subnets" {
 }
 
 variable "private_subnets" {
-  description = "Details of private subnets (no internet access as always free doesn't include NGW) to create. Subnet Name --> CIDR"
+  description = "Details of private subnets (internet access via NGW) to create. Subnet Name --> CIDR"
   type        = map(string)
   default = {
     private = "172.16.0.16/28"

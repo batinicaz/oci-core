@@ -15,4 +15,9 @@ provider "oci" {
   region       = var.oci_region
   tenancy_ocid = var.oci_tenancy_id
   user_ocid    = var.oci_user_id
+
+  ignore_defined_tags = [
+    "Oracle-Tags.CreatedBy",
+    "Oracle-Tags.CreatedOn",
+  ]
 }
