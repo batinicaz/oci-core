@@ -10,7 +10,7 @@ like NGW, image scanning and custom images.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | v1.11.2 |
 | <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 6.0 |
 
 ## Providers
