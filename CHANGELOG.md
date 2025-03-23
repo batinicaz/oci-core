@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.11](https://github.com/batinicaz/oci-core/compare/v1.5.10...v1.5.11) (2025-03-23)
+
+
+### Bug Fixes
+
+* maintain constraint for TF version upgrades ([4b00ec4](https://github.com/batinicaz/oci-core/commit/4b00ec436a84535132073c09162d4913a3b437ca))
+
 ### [1.5.10](https://github.com/batinicaz/oci-core/compare/v1.5.9...v1.5.10) (2025-03-23)
 
 ### [1.5.9](https://github.com/batinicaz/oci-core/compare/v1.5.8...v1.5.9) (2025-03-22)
