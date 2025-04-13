@@ -7,6 +7,14 @@
     {
       "fileMatch": ["README\\.md$"],
       "matchStrings": [
+        "\\| <a name=\"requirement_terraform\"></a>.*?\\| (?<currentValue>.*?) \\|"
+      ],
+      "depNameTemplate": "hashicorp/terraform",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": ["README\\.md$"],
+      "matchStrings": [
         "\\| <a name=\"requirement_(?<depName>.*?)\"></a>.*?\\| (?<currentValue>.*?) \\|"
       ],
       "datasourceTemplate": "terraform-provider",
@@ -19,13 +27,6 @@
       ],
       "datasourceTemplate": "terraform-provider",
       "extractVersionTemplate": "^[^0-9]*(?<version>.*?)$"
-    }
-  ],
-  "packageRules": [
-    {
-      "matchPackageNames": ["hashicorp/terraform"],
-      "versioning": "hashicorp",
-      "rangeStrategy": "replace"
     }
   ]
 }
