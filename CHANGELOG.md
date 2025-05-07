@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.14](https://github.com/batinicaz/oci-core/compare/v1.5.13...v1.5.14) (2025-05-07)
+
+
+### Bug Fixes
+
+* generate tf docs recursively ([e8f7c1c](https://github.com/batinicaz/oci-core/commit/e8f7c1cb45a6a0ead100f1dd8678310a85c2cfe6))
+* run lint and plan on all branches ([cd2c082](https://github.com/batinicaz/oci-core/commit/cd2c08251fa226b148dc133b23c8551add140a19))
+
 ### [1.5.13](https://github.com/batinicaz/oci-core/compare/v1.5.12...v1.5.13) (2025-04-13)
 
 ### [1.5.12](https://github.com/batinicaz/oci-core/compare/v1.5.11...v1.5.12) (2025-04-13)
