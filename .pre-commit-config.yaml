@@ -1,3 +1,5 @@
+default_language_version:
+  golang: "1.24.6"
 repos:
   - repo: https://github.com/terraform-docs/terraform-docs
     rev: v0.20.0
@@ -5,18 +7,19 @@ repos:
       - id: terraform-docs-go
         args: ["markdown", "table", "--output-file", "README.md", "./"]
       - id: terraform-docs-go
-        args: ["markdown", "table", "--output-file", "README.md", "./modules/vcn"]
+        args:
+          ["markdown", "table", "--output-file", "README.md", "./modules/vcn"]
 
   - repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.28
+    rev: v0.1.30
     hooks:
       - id: terraform-fmt
       - id: tflint
       - id: terraform-validate
 
   - repo: https://github.com/bridgecrewio/checkov.git
-    rev: 3.2.403
+    rev: 3.2.461
     hooks:
       - id: checkov
         args:
-          -  --skip-check=CKV_OCI_17 # Intentionally using stateful rules
+          - --skip-check=CKV_OCI_17 # Intentionally using stateful rules
