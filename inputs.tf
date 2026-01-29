@@ -7,6 +7,7 @@ variable "budget" {
 variable "budget_alert_email" {
   description = "The email address where budget notifications are sent"
   type        = string
+  sensitive   = true
 }
 
 variable "budget_alert_threshold" {

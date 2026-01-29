@@ -10,7 +10,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_oci"></a> [oci](#provider\_oci) | ~> 7.0 |
+| <a name="provider_oci"></a> [oci](#provider\_oci) | 7.32.0 |
 
 ## Modules
 
