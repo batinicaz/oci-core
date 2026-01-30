@@ -6,43 +6,14 @@ on:
       - "v**"
 permissions:
   contents: read
-  id-token: write
 jobs:
   deploy:
-    name: Deploy to OCI
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # ratchet:hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.14.4
-
-      - name: Fetch common secrets from Infisical
-        uses: Infisical/secrets-action@8802effbe453d0576cd923567dcc2c97a1f54058 # ratchet:Infisical/secrets-action@v1.0.15
-        with:
-          domain: https://eu.infisical.com
-          method: oidc
-          oidc-audience: ${{ github.server_url }}/${{ github.repository_owner }}
-          env-slug: terraform-common
-          project-slug: terraform
-          identity-id: ${{ vars.INFISICAL_IDENTITY_ID }}
-          export-type: env
-
-      - name: Fetch project secrets from Infisical
-        uses: Infisical/secrets-action@8802effbe453d0576cd923567dcc2c97a1f54058 # ratchet:Infisical/secrets-action@v1.0.15
-        with:
-          domain: https://eu.infisical.com
-          method: oidc
-          oidc-audience: ${{ github.server_url }}/${{ github.repository_owner }}
-          env-slug: terraform-oci-core
-          project-slug: terraform
-          identity-id: ${{ vars.INFISICAL_IDENTITY_ID }}
-          export-type: env
-
-      - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+    uses: batinicaz/gha/.github/workflows/terraform-apply.yml@v1.2.6
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      working_directory: "."
+      infisical_project_env: terraform-oci-core
+    secrets:
+      INFISICAL_IDENTITY_ID: ${{ vars.INFISICAL_IDENTITY_ID }}
