@@ -15,7 +15,7 @@ jobs:
       - name: Run pre-commit
         uses: batinicaz/gha/.github/actions/pre-commit@12cd71cfcad257813483b7d5fcaf26191e3b86f9 # ratchet:batinicaz/gha/.github/actions/pre-commit@v1.2.5
   terraform:
-    uses: batinicaz/gha/.github/workflows/terraform-plan.yml@v1.2.6
+    uses: batinicaz/gha/.github/workflows/terraform-plan.yml@v1.2.10
     permissions:
       contents: read
       id-token: write
