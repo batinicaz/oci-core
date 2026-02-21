@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/batinicaz/oci-core/compare/v1.5.37...v1.6.0) (2026-02-21)
+
+
+### Features
+
+* add extra alert that will fire as soon as ANY spending is detected during the next evaluation ([b2d7c1d](https://github.com/batinicaz/oci-core/commit/b2d7c1dbfdd91bd3f1e4c308bc52c4e3aa1b6889))
+
 ### [1.5.37](https://github.com/batinicaz/oci-core/compare/v1.5.36...v1.5.37) (2026-02-21)
 
 ### [1.5.36](https://github.com/batinicaz/oci-core/compare/v1.5.35...v1.5.36) (2026-02-19)
