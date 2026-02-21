@@ -29,6 +29,7 @@ like NGW, image scanning and custom images.
 
 | Name | Type |
 |------|------|
+| [oci_budget_alert_rule.any_spend](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/budget_alert_rule) | resource |
 | [oci_budget_alert_rule.critical](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/budget_alert_rule) | resource |
 | [oci_budget_alert_rule.warning](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/budget_alert_rule) | resource |
 | [oci_budget_budget.default](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/budget_budget) | resource |
