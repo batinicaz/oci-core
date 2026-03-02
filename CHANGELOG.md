@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.6](https://github.com/batinicaz/oci-core/compare/v1.6.5...v1.6.6) (2026-03-02)
+
+
+### Bug Fixes
+
+* budget for any spend doesn't trigger if spend < £1 ([2cb43c1](https://github.com/batinicaz/oci-core/commit/2cb43c1955b65d22b1a28de199388ed2a8445e64))
+
 ### [1.6.5](https://github.com/batinicaz/oci-core/compare/v1.6.4...v1.6.5) (2026-02-26)
 
 ### [1.6.4](https://github.com/batinicaz/oci-core/compare/v1.6.3...v1.6.4) (2026-02-24)
