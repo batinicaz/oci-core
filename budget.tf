@@ -15,8 +15,8 @@ resource "oci_budget_alert_rule" "any_spend" {
   message        = "INFO: Spending has been detected on your £${var.budget} budget"
   recipients     = var.budget_alert_email
   type           = "ACTUAL"
-  threshold      = 1
-  threshold_type = "PERCENTAGE"
+  threshold      = 0.01
+  threshold_type = "ABSOLUTE"
 }
 
 resource "oci_budget_alert_rule" "critical" {
