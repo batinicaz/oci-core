@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.2](https://github.com/batinicaz/oci-core/compare/v1.7.1...v1.7.2) (2026-03-24)
+
+
+### Bug Fixes
+
+* add tags to ons subscription ([006b99d](https://github.com/batinicaz/oci-core/commit/006b99da055e81081398db94e1c73e3d4592208d))
+
 ### [1.7.1](https://github.com/batinicaz/oci-core/compare/v1.7.0...v1.7.1) (2026-03-24)
 
 ## [1.7.0](https://github.com/batinicaz/oci-core/compare/v1.6.17...v1.7.0) (2026-03-24)
