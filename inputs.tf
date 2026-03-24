@@ -10,6 +10,12 @@ variable "budget_alert_email" {
   sensitive   = true
 }
 
+variable "monitoring_alert_email" {
+  description = "The email address where monitoring alerts are sent"
+  type        = string
+  sensitive   = true
+}
+
 variable "budget_alert_threshold" {
   description = "The percentage of the budget being spent or projected to spend that will trigger alerts"
   type        = number
