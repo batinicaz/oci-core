@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/batinicaz/oci-core/compare/v1.6.17...v1.7.0) (2026-03-24)
+
+
+### Features
+
+* add shared ONS notification topic for monitoring alerts ([217da64](https://github.com/batinicaz/oci-core/commit/217da64a740a96d0215ba1188c701cc8d5e3f83b))
+
+
+### Bug Fixes
+
+* remove defined_tags from budget alert rules to prevent constant diff ([056a52e](https://github.com/batinicaz/oci-core/commit/056a52e10bc2d451dea6f7865738d3eb9737e51b))
+
 ### [1.6.17](https://github.com/batinicaz/oci-core/compare/v1.6.16...v1.6.17) (2026-03-24)
 
 ### [1.6.16](https://github.com/batinicaz/oci-core/compare/v1.6.15...v1.6.16) (2026-03-24)
