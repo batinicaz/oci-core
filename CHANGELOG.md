@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.7](https://github.com/batinicaz/oci-core/compare/v1.7.6...v1.7.7) (2026-04-02)
+
 ### [1.7.6](https://github.com/batinicaz/oci-core/compare/v1.7.5...v1.7.6) (2026-03-29)
 
 ### [1.7.5](https://github.com/batinicaz/oci-core/compare/v1.7.4...v1.7.5) (2026-03-29)
