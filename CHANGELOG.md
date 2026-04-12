@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.12](https://github.com/batinicaz/oci-core/compare/v1.7.11...v1.7.12) (2026-04-12)
+
+
+### Bug Fixes
+
+* tf docs permissions ([0775699](https://github.com/batinicaz/oci-core/commit/07756998f42b91a01bae5e222665f8103e52e6f8))
+
 ### [1.7.11](https://github.com/batinicaz/oci-core/compare/v1.7.10...v1.7.11) (2026-04-12)
 
 ### [1.7.10](https://github.com/batinicaz/oci-core/compare/v1.7.9...v1.7.10) (2026-04-12)
