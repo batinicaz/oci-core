@@ -2,14 +2,14 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
 | <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 8.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_oci"></a> [oci](#provider\_oci) | 8.8.0 |
 
 ## Modules
@@ -19,7 +19,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [oci_core_internet_gateway.igw](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_internet_gateway) | resource |
 | [oci_core_nat_gateway.ngw](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_nat_gateway) | resource |
 | [oci_core_route_table.private](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_route_table) | resource |
@@ -33,7 +33,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_cidr_blocks"></a> [cidr\_blocks](#input\_cidr\_blocks) | List of CIDR blocks to use | `set(string)` | <pre>[<br/>  "172.16.0.0/16"<br/>]</pre> | no |
 | <a name="input_compartment_id"></a> [compartment\_id](#input\_compartment\_id) | The ID of the identity compartment that will house this VCN | `string` | n/a | yes |
 | <a name="input_dns_label"></a> [dns\_label](#input\_dns\_label) | The DNS label of the VCN. Along with the hostname/subnet this makes up the FQDN for each VNIC. | `string` | `"core"` | no |
@@ -46,7 +46,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_id"></a> [id](#output\_id) | ID of the VCN created |
 | <a name="output_private_subnets"></a> [private\_subnets](#output\_private\_subnets) | Map of private subnet names to IDs |
 | <a name="output_public_subnets"></a> [public\_subnets](#output\_public\_subnets) | Map of public subnet names to IDs |

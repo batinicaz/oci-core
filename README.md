@@ -9,26 +9,26 @@ like NGW, image scanning and custom images.
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
 | <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 8.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_oci"></a> [oci](#provider\_oci) | 8.8.0 |
 
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | <a name="module_core_vcn"></a> [core\_vcn](#module\_core\_vcn) | ./modules/vcn | n/a |
 
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [oci_budget_alert_rule.any_spend](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/budget_alert_rule) | resource |
 | [oci_budget_alert_rule.critical](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/budget_alert_rule) | resource |
 | [oci_budget_alert_rule.warning](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/budget_alert_rule) | resource |
@@ -44,7 +44,7 @@ like NGW, image scanning and custom images.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_budget"></a> [budget](#input\_budget) | Desired max monthly spend (not a limit, just a warning/monitoring mechanism) | `number` | `5` | no |
 | <a name="input_budget_alert_email"></a> [budget\_alert\_email](#input\_budget\_alert\_email) | The email address where budget notifications are sent | `string` | n/a | yes |
 | <a name="input_budget_alert_threshold"></a> [budget\_alert\_threshold](#input\_budget\_alert\_threshold) | The percentage of the budget being spent or projected to spend that will trigger alerts | `number` | `90` | no |
@@ -60,7 +60,7 @@ like NGW, image scanning and custom images.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_core_vcn_id"></a> [core\_vcn\_id](#output\_core\_vcn\_id) | n/a |
 | <a name="output_core_vcn_subnets"></a> [core\_vcn\_subnets](#output\_core\_vcn\_subnets) | n/a |
 | <a name="output_default_tags"></a> [default\_tags](#output\_default\_tags) | n/a |
