@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.9](https://github.com/batinicaz/oci-core/compare/v1.7.8...v1.7.9) (2026-04-12)
+
+
+### Bug Fixes
+
+* push tf doc updates using documentation bot so renovate auto merge works ([8c4dc3f](https://github.com/batinicaz/oci-core/commit/8c4dc3f0bb62acc210d67091e88afa1165104b11))
+
 ### [1.7.8](https://github.com/batinicaz/oci-core/compare/v1.7.7...v1.7.8) (2026-04-05)
 
 ### [1.7.7](https://github.com/batinicaz/oci-core/compare/v1.7.6...v1.7.7) (2026-04-02)
