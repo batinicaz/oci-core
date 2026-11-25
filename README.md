@@ -17,7 +17,7 @@ like NGW, image scanning and custom images.
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_oci"></a> [oci](#provider\_oci) | 9.12.1 |
+| <a name="provider_oci"></a> [oci](#provider\_oci) | 9.13.0 |
 
 ## Modules
 
